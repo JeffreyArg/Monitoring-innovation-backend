@@ -1,0 +1,20 @@
+# Environment directories
+.venv/
+env/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+*.env
+.env.*
+
+# Tools
+.pytest_cache/
+dist/
+build/
