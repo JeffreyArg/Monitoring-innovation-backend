@@ -12,8 +12,8 @@ allow_origin_regex = os.getenv("CORS_ORIGIN_REGEX", None)
 
 if not allow_origins and not allow_origin_regex:
     allow_origins = [
-        "http://localhost:4200",
-        "http://127.0.0.1:4200",
+        "https://jeffreyarg.github.io",
+        "https://jeffreyarg.github.io/Monitoring-innovation-frontend",
     ]
 
 app.add_middleware(
