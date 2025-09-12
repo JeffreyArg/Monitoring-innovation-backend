@@ -69,3 +69,11 @@ class VehicleService:
         self.db.commit()
         self.db.refresh(v)
         return v
+    def delete(self, vehicle_id: int):
+        v = self.repo.get(vehicle_id)
+        if not v or v.was_deleted:
+            raise HTTPException(404, "Vehicle not found")
+        v.was_deleted = True
+        self.repo.update(v)
+        self.db.commit()
+        return None

@@ -27,6 +27,8 @@ class VehicleRepository:
             stmt = stmt.where(Vehicle.brand_id == brand_id)
         if locality_id is not None:
             stmt = stmt.where(Vehicle.locality_id == locality_id)
+
+        stmt = stmt.order_by(Vehicle.updated_at.desc())
         return self.db.scalars(stmt).all()
 
     def create(self, *, brand_id: int, locality_id: int, applicant_name: str) -> Vehicle:

@@ -1,4 +1,3 @@
-# app/dtos/brand.py
 from pydantic import BaseModel, Field
 
 class CreateBrandDto(BaseModel):
