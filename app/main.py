@@ -18,11 +18,12 @@ if not allow_origins and not allow_origin_regex:
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allow_origins,
-    allow_origin_regex=allow_origin_regex,
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["Content-Range","X-Total-Count"],
+    max_age=86400,
 )
 
 app.include_router(api_router, prefix="/api/v1")
